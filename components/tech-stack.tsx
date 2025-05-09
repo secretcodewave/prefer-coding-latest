@@ -2,54 +2,20 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Code, Database, Server, Cloud, Globe, Lock, Terminal, BarChart } from "lucide-react"
 
 const technologies = [
-  { name: "React", icon: "/react.png", color: "#61DAFB", description: "Frontend library" },
-  { name: "Node.js", icon: "/njs.png", color: "#339933", description: "Backend runtime" },
-  { name: "Python", icon: "/python.jpeg", color: "#3776AB", description: "Versatile language" },
-  { name: "JavaScript", icon: "/js.png", color: "#F7DF1E", description: "Web scripting" },
-  { name: "TypeScript", icon: "/ts.png", color: "#3178C6", description: "Typed JavaScript" },
-  { name: "Docker", icon: "/docker.webp", color: "#2496ED", description: "Containerization" },
-  { name: "AWS", icon: "/aws.jpeg", color: "#FF9900", description: "Cloud services" },
-  { name: "GraphQL", icon: "/gql.jpg", color: "#E10098", description: "API query language" },
+  { name: "React", icon: "/react.png", color: "#61DAFB", description: "Dynamic interfaces" },
+  { name: "Next.js", icon: "/next.jpeg", color: "#000000", description: "Performance & SEO" },
+  { name: "Node.js", icon: "/njs.png", color: "#339933", description: "Backend solutions" },
+  { name: "WordPress", icon: "/wordpress.png", color: "#21759B", description: "CMS solutions" },
+  { name: "Shopify", icon: "/shopify.png", color: "#7AB55C", description: "E-commerce" },
+  { name: "TypeScript", icon: "/ts.png", color: "#3178C6", description: "Type safety" },
+  { name: "AWS", icon: "/aws.jpeg", color: "#FF9900", description: "Cloud hosting" },
+  { name: "Tailwind CSS", icon: "/tailwind.png", color: "#38B2AC", description: "Rapid styling" },
   { name: "MongoDB", icon: "/mongo.png", color: "#47A248", description: "NoSQL database" },
-  { name: "Next.js", icon: "/next.jpeg", color: "#000000", description: "React framework" },
-  { name: "Angular", icon: "/angular.jpg", color: "#DD0031", description: "Web framework" },
-  { name: "Vue.js", icon: "/vue.png", color: "#4FC08D", description: "Progressive framework" },
-]
-
-const categories = [
-  { 
-    name: "Frontend", 
-    icon: Code,
-    description: "Build modern, responsive user interfaces"
-  },
-  { 
-    name: "Backend", 
-    icon: Server,
-    description: "Create robust server-side applications"
-  },
-  { 
-    name: "Databases", 
-    icon: Database,
-    description: "Store and manage your data efficiently"
-  },
-  { 
-    name: "Cloud", 
-    icon: Cloud,
-    description: "Deploy and scale with cloud technologies"
-  },
-  { 
-    name: "Security", 
-    icon: Lock,
-    description: "Implement best practices for application security"
-  },
-  { 
-    name: "DevOps", 
-    icon: Terminal,
-    description: "Streamline your development workflow"
-  },
+  { name: "Vercel", icon: "/vercel.png", color: "#000000", description: "Deployment" },
+  { name: "Figma", icon: "/figma.png", color: "#F24E1E", description: "UI/UX design" },
+  { name: "Stripe", icon: "/stripe.png", color: "#6772E5", description: "Payment processing" },
 ]
 
 const zoomInVariants = {
@@ -62,9 +28,9 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
-    }
-  }
+      staggerChildren: 0.1,
+    },
+  },
 }
 
 const itemVariants = {
@@ -72,79 +38,101 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 }
-  }
+    transition: { duration: 0.5 },
+  },
 }
 
 export function TechStack() {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-gray-200">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800 text-white relative overflow-hidden">
+      {/* Background code pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none select-none overflow-hidden">
+        <div className="absolute top-[10%] left-[5%] text-xs sm:text-sm md:text-base font-mono">
+          &lt;div className="tech-stack"&gt;
+        </div>
+        <div className="absolute top-[20%] left-[10%] text-xs sm:text-sm md:text-base font-mono">
+          const technologies = ['React', 'Next.js', 'Node'];
+        </div>
+        <div className="absolute top-[30%] left-[15%] text-xs sm:text-sm md:text-base font-mono">
+          function TechStack() {"{"}
+        </div>
+        <div className="absolute top-[40%] left-[20%] text-xs sm:text-sm md:text-base font-mono">
+          return technologies.map(tech =&gt; &lt;Tech key={"{"}tech{"}"} name={"{"}tech{"}"} /&gt;);
+        </div>
+        <div className="absolute top-[50%] left-[15%] text-xs sm:text-sm md:text-base font-mono">{"}"}</div>
+        <div className="absolute top-[60%] left-[10%] text-xs sm:text-sm md:text-base font-mono">
+          export default TechStack;
+        </div>
+        <div className="absolute top-[70%] left-[5%] text-xs sm:text-sm md:text-base font-mono">&lt;/div&gt;</div>
+
+        <div className="absolute top-[15%] right-[5%] text-xs sm:text-sm md:text-base font-mono">
+          import {"{"} useState {"}"} from 'react';
+        </div>
+        <div className="absolute top-[25%] right-[10%] text-xs sm:text-sm md:text-base font-mono">
+          const [isAwesome, setIsAwesome] = useState(true);
+        </div>
+        <div className="absolute top-[35%] right-[15%] text-xs sm:text-sm md:text-base font-mono">
+          useEffect(() ={">"} {"{"}
+        </div>
+        <div className="absolute top-[45%] right-[20%] text-xs sm:text-sm md:text-base font-mono">
+          console.log('Technologies loaded!');
+        </div>
+        <div className="absolute top-[55%] right-[15%] text-xs sm:text-sm md:text-base font-mono">{"}"}, []);</div>
+        <div className="absolute top-[65%] right-[10%] text-xs sm:text-sm md:text-base font-mono">
+          &lt;section className="tech-stack"&gt;
+        </div>
+        <div className="absolute top-[75%] right-[5%] text-xs sm:text-sm md:text-base font-mono">&lt;/section&gt;</div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Master the Latest Technologies</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">Gain expertise in the most in-demand programming languages, frameworks, and tools in the industry.</p>
+          <div className="inline-block px-4 py-1 bg-blue-500/20 backdrop-blur-sm rounded-full text-blue-300 font-mono text-sm mb-4">
+            &lt;technologies&gt;
+          </div>
+          <h2 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+            Cutting-Edge Tech Stack
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            We leverage the latest web technologies to build fast, secure, and scalable websites for your business.
+          </p>
         </div>
 
-        {/* Categories Section */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
-          {categories.map((category) => (
-            <motion.div
-              key={category.name}
-              variants={zoomInVariants}
-              initial="initial"
-              whileHover="whileHover"
-              className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow"
-            >
-              <div className="p-3 mb-4 rounded-full bg-blue-50">
-                <category.icon className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">{category.name}</h3>
-              <p className="text-sm text-gray-600">{category.description}</p>
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {technologies.map((tech) => (
+            <motion.div key={tech.name} variants={itemVariants} className="flex flex-col items-center group">
+              <motion.div
+                className="relative mb-4 bg-slate-800 p-4 rounded-full shadow-md group-hover:shadow-lg transition-all border border-slate-700"
+                style={{ borderTop: `3px solid ${tech.color}` }}
+                variants={zoomInVariants}
+                initial="initial"
+                whileHover="whileHover"
+              >
+                <Image
+                  src={tech.icon || "/placeholder.svg"}
+                  alt={tech.name}
+                  width={60}
+                  height={60}
+                  className="rounded-md"
+                  unoptimized
+                />
+              </motion.div>
+              <p className="text-lg font-semibold text-white">{tech.name}</p>
+              <p className="text-sm text-gray-400 text-center">{tech.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mb-16">
-          {/* <h3 className="text-2xl font-bold text-center mb-10">Technologies You'll Learn</h3> */}
-          
-          <motion.div 
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {technologies.map((tech) => (
-              <motion.div
-                key={tech.name}
-                variants={itemVariants}
-                className="flex flex-col items-center group"
-              >
-                <motion.div 
-                  className="relative mb-4 bg-white p-4 rounded-full shadow-md group-hover:shadow-lg transition-all"
-                  style={{ borderTop: `3px solid ${tech.color}` }}
-                  variants={zoomInVariants}
-                  initial="initial"
-                  whileHover="whileHover"
-                >
-                  <Image 
-                    src={tech.icon} 
-                    alt={tech.name} 
-                    width={60} 
-                    height={60} 
-                    className="rounded-md"
-                    unoptimized
-                  />
-                </motion.div>
-                <p className="text-lg font-semibold">{tech.name}</p>
-                <p className="text-sm text-gray-600 text-center">{tech.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+        <div className="mt-20 text-center">
+          <div className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white font-medium">
+            We use the right technology for your specific project needs
+          </div>
         </div>
-
-        {/* Call to action */}
-        
       </div>
     </section>
   )

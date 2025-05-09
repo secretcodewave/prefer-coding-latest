@@ -106,10 +106,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </h2>
             <p className="text-gray-700 mb-8 leading-relaxed text-lg">{project.description}</p>
             <p className="text-gray-700 mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed
-              erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.
-              Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut
-              dapibus.
+              
             </p>
           </motion.div>
 
@@ -145,47 +142,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </motion.div>
           </div>
 
-          {/* Project images with creative layout */}
-          <motion.div
-            className="grid md:grid-cols-12 gap-6 mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <div className="md:col-span-7 rounded-2xl overflow-hidden h-80 relative">
-              <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="Project screenshot 1"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="md:col-span-5 rounded-2xl overflow-hidden h-80 relative">
-              <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="Project screenshot 2"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="md:col-span-5 rounded-2xl overflow-hidden h-80 relative">
-              <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="Project screenshot 3"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="md:col-span-7 rounded-2xl overflow-hidden h-80 relative">
-              <Image
-                src="/placeholder.svg?height=600&width=800"
-                alt="Project screenshot 4"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </motion.div>
-
+          {/* Project images with creative laut */}
+         
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

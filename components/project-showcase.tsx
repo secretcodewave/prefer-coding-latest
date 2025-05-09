@@ -1,113 +1,122 @@
 "use client"
 
-import { useState } from "react"
+import { motion } from "framer-motion"
 import Image from "next/image"
-import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, ExternalLink, Users } from "lucide-react"
-import type { Project } from "@/lib/types"
+import Link from "next/link"
+import { Badge } from "@/components/ui/badge"
+import { ExternalLink, Github, Code } from "lucide-react"
 
-interface ProjectShowcaseProps {
-  projects: Project[]
-}
+const projects = [
+  {
+    title: "Navshristi E-Commerce Website",
+    description: "A full-featured online store with custom product filtering and secure checkout",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["Next.js", "Stripe", "Tailwind CSS"],
+    link: "/pf1.png",
+    codeLink: "https://github.com/example/ecommerce",
+    liveLink: "https://example-ecommerce.com",
+  },
+  {
+    title: "Next-Gen CyberSafe Website",
+    description: "Modern, responsive website for a services company",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["React", "GSAP", "Styled Components"],
+    link: "/pa.png",
+    codeLink: "https://github.com/example/corporate",
+    liveLink: "https://example-corporate.com",
+  },
+  {
+    title: "Real Estate Listings",
+    description: "Property search platform with interactive maps and filtering",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["Next.js", "MongoDB", "Google Maps API"],
+    link: "/pa.png",
+    codeLink: "https://github.com/example/realestate",
+    liveLink: "https://example-realestate.com",
+  },
+]
 
-export default function ProjectShowcase({ projects }: ProjectShowcaseProps) {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const activeProject = projects[activeIndex]
-
+export function ProjectShowcase() {
   return (
-    <div className="grid lg:grid-cols-5 gap-8 items-center">
-      {/* Project preview - takes 3 columns on large screens */}
-      <div className="lg:col-span-3 rounded-2xl overflow-hidden bg-white shadow-xl h-full">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeProject.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="relative aspect-[16/9] w-full"
-          >
-            <Image
-              src={activeProject.image || "/placeholder.svg"}
-              alt={activeProject.title}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-              <Badge className="self-start mb-3 bg-blue-500 hover:bg-blue-600">{activeProject.category}</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">{activeProject.title}</h3>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {activeProject.technologies.map((tech, index) => (
-                  <Badge key={index} variant="outline" className="border-white/30 bg-black/20 backdrop-blur-sm">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-4 text-sm text-white/80">
-                <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  {activeProject.completionDate}
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="h-4 w-4" />
-                  {activeProject.clientName}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="inline-block px-4 py-1 bg-blue-100 rounded-full text-blue-800 font-medium text-sm mb-4">
+            Portfolio
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Recent Projects</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Take a look at some of our recent work that has helped businesses transform their online presence.
+          </p>
+        </motion.div>
 
-      {/* Project selection and details - takes 2 columns on large screens */}
-      <div className="lg:col-span-2 space-y-6">
-        <div className="bg-white p-6 rounded-2xl shadow-lg">
-          <AnimatePresence mode="wait">
+        <div className="grid lg:grid-cols-3 gap-10">
+          {projects.map((project, index) => (
             <motion.div
-              key={activeProject.id}
+              key={project.title}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group"
             >
-              <h3 className="text-2xl font-bold mb-4">{activeProject.title}</h3>
-              <p className="text-gray-600 mb-6">{activeProject.description}</p>
-              <div className="flex gap-3">
-                <Button className="flex-1">
-                  <Link href={`/projects/${activeProject.id}`} className="flex items-center justify-center w-full">
-                    View Details
-                  </Link>
-                </Button>
-                <Button variant="outline" className="flex-1">
-                  <Link
-                    href={`/projects/${activeProject.id}/demo`}
-                    className="flex items-center justify-center w-full gap-2"
-                  >
-                    Live Demo <ExternalLink className="h-4 w-4" />
-                  </Link>
-                </Button>
+              <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col bg-white">
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="p-4 w-full flex justify-between items-center">
+                      <Link href={project.liveLink} className="text-white hover:text-blue-300 transition-colors">
+                        <ExternalLink className="h-5 w-5" />
+                      </Link>
+                      <Link href={project.codeLink} className="text-white hover:text-blue-300 transition-colors">
+                        <Github className="h-5 w-5" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4 flex-grow">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="outline" className="bg-blue-50 text-blue-800 border-blue-200">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Code className="h-4 w-4 mr-1" />
+                      <span>View Code</span>
+                    </div>
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href={project.link}>Case Study</Link>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Project thumbnails */}
-        <div className="grid grid-cols-3 gap-3">
-          {projects.map((project, index) => (
-            <button
-              key={project.id}
-              onClick={() => setActiveIndex(index)}
-              className={`relative rounded-lg overflow-hidden aspect-video ${
-                index === activeIndex ? "ring-2 ring-blue-500" : "opacity-70 hover:opacity-100"
-              }`}
-            >
-              <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-            </button>
           ))}
         </div>
+
+        <div className="text-center mt-16">
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
+            <Link href="/portfolio">View All Projects</Link>
+          </Button>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }

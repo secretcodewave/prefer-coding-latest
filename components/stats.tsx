@@ -3,6 +3,10 @@
 import { motion } from "framer-motion"
 import { Users, BookOpen, Award, Briefcase } from "lucide-react"
 
+
+
+
+
 const stats = [
   {
     icon: Users,
@@ -25,6 +29,10 @@ const stats = [
     description: "Partner Companies",
   },
 ]
+
+
+
+
 
 export function Stats() {
   return (

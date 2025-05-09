@@ -24,16 +24,6 @@ export default function CreativeProjectGrid({ projects }: CreativeProjectGridPro
   // Filter projects based on selected category
   const filteredProjects = filter ? projects.filter((project) => project.category === filter) : projects
 
-  // Masonry-like layout with different heights
-  const getProjectHeight = (index: number) => {
-    // Alternate between different heights for visual interest
-    const pattern = index % 4
-    if (pattern === 0) return "h-[400px]"
-    if (pattern === 1) return "h-[450px]"
-    if (pattern === 2) return "h-[500px]"
-    return "h-[380px]"
-  }
-
   return (
     <div className="space-y-12" ref={containerRef}>
       {/* Filter buttons with animation */}
@@ -62,7 +52,7 @@ export default function CreativeProjectGrid({ projects }: CreativeProjectGridPro
         ))}
       </motion.div>
 
-      {/* Creative masonry grid with hover effects */}
+      {/* Uniform grid with hover effects */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((project, index) => (
           <motion.div
@@ -70,7 +60,7 @@ export default function CreativeProjectGrid({ projects }: CreativeProjectGridPro
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={`group relative overflow-hidden rounded-2xl ${getProjectHeight(index)}`}
+            className="group relative overflow-hidden rounded-2xl h-[450px]"
             onMouseEnter={() => setHoveredId(project.id)}
             onMouseLeave={() => setHoveredId(null)}
             layoutId={`project-${project.id}`}
@@ -89,7 +79,7 @@ export default function CreativeProjectGrid({ projects }: CreativeProjectGridPro
             </div>
 
             {/* Content overlay */}
-            <div className="absolute inset-0 p-6 flex flex-col justify-end z-10 transition-transform duration-500">
+            <div className="absolute inset-0 p-6 flex flex-col  justify-end z-10 transition-transform duration-500">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{

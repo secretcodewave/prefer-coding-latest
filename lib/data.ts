@@ -1,20 +1,9 @@
 import type { Project } from "./types"
 
 export const projects: Project[] = [
+  
   {
     id: 1,
-    title: "Next-Gen CyberSafe Website",
-    description:
-      "Complete redesign and development of a sservice showcase website for the company nextgen cyber cafe",
-    image: "/pa1.png",
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    completionDate: "March 2023",
-    clientName: "NextGen Cyber Cafe",
-    featured: true,
-  },
-  {
-    id: 2,
     title: "NavShristi Website",
     description:
       "Website made for managing user roless, referral sysstem, authentication and task based incentive with an e-commerce store built inside with 20+ features.",
@@ -23,6 +12,17 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Node.js", "PostgreSQL"],
     completionDate: "January 2025",
     clientName: "NavShristi",
+    featured: true,
+  },{
+    id: 2,
+    title: "Next-Gen CyberSafe Website",
+    description:
+      "Complete redesign and development of a sservice showcase website for the company nextgen cyber cafe",
+    image: "/pa1.png",
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB"],
+    completionDate: "March 2023",
+    clientName: "NextGen Cyber Cafe",
     featured: true,
   },
   {
