@@ -15,7 +15,7 @@ const technologies = [
   { name: "MongoDB", icon: "/mongo.png", color: "#47A248", description: "NoSQL database" },
   { name: "Vercel", icon: "/vercel.png", color: "#000000", description: "Deployment" },
   { name: "Figma", icon: "/figma.png", color: "#F24E1E", description: "UI/UX design" },
-  { name: "Stripe", icon: "/stripe.png", color: "#6772E5", description: "Payment processing" },
+  { name: "Stripe", icon: "/stripee.png", color: "#6772E5", description: "Payment processing" },
 ]
 
 const zoomInVariants = {
