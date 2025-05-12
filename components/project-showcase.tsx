@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Next-Gen CyberSafe Website",
     description: "Modern, responsive website for a services company",
-    image: "/pa.png",
+    image: "/pa1.png",
     tags: ["React", "GSAP", "Styled Components"],
     link: "/pa.png",
     codeLink: "https://github.com/example/corporate",
@@ -30,7 +30,7 @@ const projects = [
     title: "E Commerce Website",
     description: "A full-featured online store with custom product filtering and secure checkout",
     // description: "Property search platform with interactive maps and filtering",
-    image: "/pa.png",
+    image: "/pb1.png",
     tags: ["Next.js", "MongoDB", "Google Maps API"],
     link: "/pb1.png",
     codeLink: "https://github.com/example/realestate",
